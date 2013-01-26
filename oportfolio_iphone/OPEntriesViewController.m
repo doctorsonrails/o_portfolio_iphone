@@ -8,6 +8,7 @@
 
 #import "OPEntriesViewController.h"
 #import "OPEntryViewController.h"
+#import "AFJSONRequestOperation.h"
 
 @interface OPEntriesViewController ()
 
@@ -32,9 +33,19 @@
     
     if (![defaults boolForKey:@"defaultUserSet"])
     {
-        // segue over to the login VC
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     }
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"https://o-portfolio-api.herokuapp.com/entries/"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"Returned JSON is %@", JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"NSError: %@", error.localizedDescription);
+    }];
+    
+    [operation start];
+
 }
 
 - (void)didReceiveMemoryWarning
