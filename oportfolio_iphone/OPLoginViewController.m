@@ -62,7 +62,6 @@
     [defaults setObject:[alertView textFieldAtIndex:1].text forKey:@"password"];
     [defaults synchronize];
     
-    
     // go to entries VC
     [self dismissViewControllerAnimated:YES completion:nil];
 }

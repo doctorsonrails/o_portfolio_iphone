@@ -11,5 +11,15 @@
 
 @implementation Entry
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        // init code here
+    }
+    
+    return self;
+}
+
 
 @end

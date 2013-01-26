@@ -36,13 +36,23 @@
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     } else {
+        // get the user's info for the user defaults
         NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
         NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
         
+        // make requests using userName and password
         [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
-        
         [[SBAPIManager sharedManager] getPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
             self.entries = JSON;
+            for (NSDictionary* entryData in self.entries) {
+                Entry *entry = [[Entry alloc] init];
+                entry.title = entryData[@"title"];
+                entry.description = entryData[@"description"];
+                entry.reflection  = entryData[@"reflection"];
+                entry.occuredAt = [NSDate date];
+                NSLog(@"%@", entry);
+            }
+            [self.tableView setHidden:NO];
             [self.tableView reloadData];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"there was an error");
@@ -50,23 +60,25 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.entries count];
 }
 
@@ -75,10 +87,8 @@
     static NSString *CellIdentifier = @"entry";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    
-    
     cell.textLabel.text = [self.entries objectAtIndex:indexPath.row][@"title"];
-    cell.detailTextLabel.text = @"Tags will go here";
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Written on %@", [self.entries objectAtIndex:indexPath.row][@"occurred_at"]];
     return cell;
 }
 

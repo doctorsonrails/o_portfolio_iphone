@@ -11,7 +11,7 @@
 
 @interface OPEntriesViewController : UITableViewController
 
-//@property (strong, nonatomic) Entry *entry;
-@property (strong, nonatomic) NSArray *entries;
+@property (strong, nonatomic) Entry *entry;
+@property (strong, nonatomic) NSMutableArray *entries;
 
 @end

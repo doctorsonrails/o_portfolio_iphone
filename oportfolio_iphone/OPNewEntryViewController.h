@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) IBOutlet UITextView *descriptionField;
 @property (strong, nonatomic) IBOutlet UITextView *reflectionField;
+@property (strong, nonatomic) NSDictionary *entry;
 
 @end
