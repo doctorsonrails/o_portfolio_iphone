@@ -1,5 +1,5 @@
 //
-//  OPViewController.h
+//  OPEntryViewController.h
 //  oportfolio_iphone
 //
 //  Created by Edward Wallitt on 26/01/2013.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OPViewController : UIViewController
+@interface OPEntryViewController : UIViewController
+
+@property (strong, nonatomic) NSString *entry;
 
 @end

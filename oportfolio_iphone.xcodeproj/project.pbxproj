@@ -17,7 +17,10 @@
 		2B4D97BE16B3FC9E009A466C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D97BD16B3FC9E009A466C /* Default@2x.png */; };
 		2B4D97C016B3FC9E009A466C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D97BF16B3FC9E009A466C /* Default-568h@2x.png */; };
 		2B4D97C316B3FC9E009A466C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D97C116B3FC9E009A466C /* MainStoryboard.storyboard */; };
-		2B4D97C616B3FC9E009A466C /* OPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97C516B3FC9E009A466C /* OPViewController.m */; };
+		2B4D97D616B40753009A466C /* OPEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97D516B40753009A466C /* OPEntriesViewController.m */; };
+		2B4D97D916B40776009A466C /* OPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97D816B40776009A466C /* OPLoginViewController.m */; };
+		2B4D97DF16B409B0009A466C /* OPEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97DE16B409B0009A466C /* OPEntryViewController.m */; };
+		2B4D97E216B40C1C009A466C /* OPNewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +38,14 @@
 		2B4D97BD16B3FC9E009A466C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2B4D97BF16B3FC9E009A466C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2B4D97C216B3FC9E009A466C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2B4D97C416B3FC9E009A466C /* OPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OPViewController.h; sourceTree = "<group>"; };
-		2B4D97C516B3FC9E009A466C /* OPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OPViewController.m; sourceTree = "<group>"; };
+		2B4D97D416B40753009A466C /* OPEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPEntriesViewController.h; sourceTree = "<group>"; };
+		2B4D97D516B40753009A466C /* OPEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPEntriesViewController.m; sourceTree = "<group>"; };
+		2B4D97D716B40776009A466C /* OPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPLoginViewController.h; sourceTree = "<group>"; };
+		2B4D97D816B40776009A466C /* OPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPLoginViewController.m; sourceTree = "<group>"; };
+		2B4D97DD16B409B0009A466C /* OPEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPEntryViewController.h; sourceTree = "<group>"; };
+		2B4D97DE16B409B0009A466C /* OPEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPEntryViewController.m; sourceTree = "<group>"; };
+		2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPNewEntryViewController.h; sourceTree = "<group>"; };
+		2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPNewEntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +95,14 @@
 				2B4D97B816B3FC9E009A466C /* OPAppDelegate.h */,
 				2B4D97B916B3FC9E009A466C /* OPAppDelegate.m */,
 				2B4D97C116B3FC9E009A466C /* MainStoryboard.storyboard */,
-				2B4D97C416B3FC9E009A466C /* OPViewController.h */,
-				2B4D97C516B3FC9E009A466C /* OPViewController.m */,
+				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
+				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
+				2B4D97DD16B409B0009A466C /* OPEntryViewController.h */,
+				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
+				2B4D97D716B40776009A466C /* OPLoginViewController.h */,
+				2B4D97D816B40776009A466C /* OPLoginViewController.m */,
+				2B4D97D416B40753009A466C /* OPEntriesViewController.h */,
+				2B4D97D516B40753009A466C /* OPEntriesViewController.m */,
 				2B4D97B016B3FC9E009A466C /* Supporting Files */,
 			);
 			path = oportfolio_iphone;
@@ -176,7 +191,10 @@
 			files = (
 				2B4D97B616B3FC9E009A466C /* main.m in Sources */,
 				2B4D97BA16B3FC9E009A466C /* OPAppDelegate.m in Sources */,
-				2B4D97C616B3FC9E009A466C /* OPViewController.m in Sources */,
+				2B4D97D616B40753009A466C /* OPEntriesViewController.m in Sources */,
+				2B4D97D916B40776009A466C /* OPLoginViewController.m in Sources */,
+				2B4D97DF16B409B0009A466C /* OPEntryViewController.m in Sources */,
+				2B4D97E216B40C1C009A466C /* OPNewEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
