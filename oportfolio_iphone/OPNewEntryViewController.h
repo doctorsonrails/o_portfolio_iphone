@@ -13,4 +13,8 @@
 
 - (IBAction)saveEntry:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *titleField;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionField;
+@property (strong, nonatomic) IBOutlet UITextView *reflectionField;
+
 @end

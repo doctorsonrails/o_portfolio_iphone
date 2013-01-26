@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B4D97A416B3FC9E009A466C"
-               BuildableName = "oportfolio_iphone.app"
-               BlueprintName = "oportfolio_iphone"
-               ReferencedContainer = "container:oportfolio_iphone.xcodeproj">
+               BuildableName = "oportfolio.app"
+               BlueprintName = "oportfolio"
+               ReferencedContainer = "container:oportfolio.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B4D97A416B3FC9E009A466C"
-            BuildableName = "oportfolio_iphone.app"
-            BlueprintName = "oportfolio_iphone"
-            ReferencedContainer = "container:oportfolio_iphone.xcodeproj">
+            BuildableName = "oportfolio.app"
+            BlueprintName = "oportfolio"
+            ReferencedContainer = "container:oportfolio.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B4D97A416B3FC9E009A466C"
-            BuildableName = "oportfolio_iphone.app"
-            BlueprintName = "oportfolio_iphone"
-            ReferencedContainer = "container:oportfolio_iphone.xcodeproj">
+            BuildableName = "oportfolio.app"
+            BlueprintName = "oportfolio"
+            ReferencedContainer = "container:oportfolio.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B4D97A416B3FC9E009A466C"
-            BuildableName = "oportfolio_iphone.app"
-            BlueprintName = "oportfolio_iphone"
-            ReferencedContainer = "container:oportfolio_iphone.xcodeproj">
+            BuildableName = "oportfolio.app"
+            BlueprintName = "oportfolio"
+            ReferencedContainer = "container:oportfolio.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

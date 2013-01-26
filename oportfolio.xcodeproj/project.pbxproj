@@ -21,17 +21,18 @@
 		2B4D97D916B40776009A466C /* OPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97D816B40776009A466C /* OPLoginViewController.m */; };
 		2B4D97DF16B409B0009A466C /* OPEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97DE16B409B0009A466C /* OPEntryViewController.m */; };
 		2B4D97E216B40C1C009A466C /* OPNewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */; };
+		2B4D97E916B41009009A466C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D97E816B41009009A466C /* Entry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B4D97A516B3FC9E009A466C /* oportfolio_iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oportfolio_iphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4D97A516B3FC9E009A466C /* oportfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oportfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4D97A916B3FC9E009A466C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B4D97AB16B3FC9E009A466C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B4D97AD16B3FC9E009A466C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2B4D97B116B3FC9E009A466C /* oportfolio_iphone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "oportfolio_iphone-Info.plist"; sourceTree = "<group>"; };
+		2B4D97B116B3FC9E009A466C /* oportfolio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "oportfolio-Info.plist"; sourceTree = "<group>"; };
 		2B4D97B316B3FC9E009A466C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B4D97B516B3FC9E009A466C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2B4D97B716B3FC9E009A466C /* oportfolio_iphone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oportfolio_iphone-Prefix.pch"; sourceTree = "<group>"; };
+		2B4D97B716B3FC9E009A466C /* oportfolio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oportfolio-Prefix.pch"; sourceTree = "<group>"; };
 		2B4D97B816B3FC9E009A466C /* OPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OPAppDelegate.h; sourceTree = "<group>"; };
 		2B4D97B916B3FC9E009A466C /* OPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OPAppDelegate.m; sourceTree = "<group>"; };
 		2B4D97BB16B3FC9E009A466C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -46,6 +47,8 @@
 		2B4D97DE16B409B0009A466C /* OPEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPEntryViewController.m; sourceTree = "<group>"; };
 		2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPNewEntryViewController.h; sourceTree = "<group>"; };
 		2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPNewEntryViewController.m; sourceTree = "<group>"; };
+		2B4D97E716B41009009A466C /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		2B4D97E816B41009009A466C /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +77,7 @@
 		2B4D97A616B3FC9E009A466C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B4D97A516B3FC9E009A466C /* oportfolio_iphone.app */,
+				2B4D97A516B3FC9E009A466C /* oportfolio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,15 +97,9 @@
 			children = (
 				2B4D97B816B3FC9E009A466C /* OPAppDelegate.h */,
 				2B4D97B916B3FC9E009A466C /* OPAppDelegate.m */,
+				2B4D97E416B40FC3009A466C /* Models */,
+				2B4D97E316B40FBC009A466C /* Controllers */,
 				2B4D97C116B3FC9E009A466C /* MainStoryboard.storyboard */,
-				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
-				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
-				2B4D97DD16B409B0009A466C /* OPEntryViewController.h */,
-				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
-				2B4D97D716B40776009A466C /* OPLoginViewController.h */,
-				2B4D97D816B40776009A466C /* OPLoginViewController.m */,
-				2B4D97D416B40753009A466C /* OPEntriesViewController.h */,
-				2B4D97D516B40753009A466C /* OPEntriesViewController.m */,
 				2B4D97B016B3FC9E009A466C /* Supporting Files */,
 			);
 			path = oportfolio_iphone;
@@ -111,10 +108,10 @@
 		2B4D97B016B3FC9E009A466C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2B4D97B116B3FC9E009A466C /* oportfolio_iphone-Info.plist */,
+				2B4D97B116B3FC9E009A466C /* oportfolio-Info.plist */,
 				2B4D97B216B3FC9E009A466C /* InfoPlist.strings */,
 				2B4D97B516B3FC9E009A466C /* main.m */,
-				2B4D97B716B3FC9E009A466C /* oportfolio_iphone-Prefix.pch */,
+				2B4D97B716B3FC9E009A466C /* oportfolio-Prefix.pch */,
 				2B4D97BB16B3FC9E009A466C /* Default.png */,
 				2B4D97BD16B3FC9E009A466C /* Default@2x.png */,
 				2B4D97BF16B3FC9E009A466C /* Default-568h@2x.png */,
@@ -122,12 +119,52 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2B4D97E316B40FBC009A466C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B4D97E616B40FE4009A466C /* Authentication */,
+				2B4D97E516B40FDB009A466C /* Entries */,
+				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
+				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
+				2B4D97DD16B409B0009A466C /* OPEntryViewController.h */,
+				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
+				2B4D97D416B40753009A466C /* OPEntriesViewController.h */,
+				2B4D97D516B40753009A466C /* OPEntriesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2B4D97E416B40FC3009A466C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B4D97E716B41009009A466C /* Entry.h */,
+				2B4D97E816B41009009A466C /* Entry.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2B4D97E516B40FDB009A466C /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Entries;
+			sourceTree = "<group>";
+		};
+		2B4D97E616B40FE4009A466C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2B4D97D716B40776009A466C /* OPLoginViewController.h */,
+				2B4D97D816B40776009A466C /* OPLoginViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B4D97A416B3FC9E009A466C /* oportfolio_iphone */ = {
+		2B4D97A416B3FC9E009A466C /* oportfolio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B4D97C916B3FC9E009A466C /* Build configuration list for PBXNativeTarget "oportfolio_iphone" */;
+			buildConfigurationList = 2B4D97C916B3FC9E009A466C /* Build configuration list for PBXNativeTarget "oportfolio" */;
 			buildPhases = (
 				2B4D97A116B3FC9E009A466C /* Sources */,
 				2B4D97A216B3FC9E009A466C /* Frameworks */,
@@ -137,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = oportfolio_iphone;
+			name = oportfolio;
 			productName = oportfolio_iphone;
-			productReference = 2B4D97A516B3FC9E009A466C /* oportfolio_iphone.app */;
+			productReference = 2B4D97A516B3FC9E009A466C /* oportfolio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +189,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Edward Wallitt";
 			};
-			buildConfigurationList = 2B4D979F16B3FC9E009A466C /* Build configuration list for PBXProject "oportfolio_iphone" */;
+			buildConfigurationList = 2B4D979F16B3FC9E009A466C /* Build configuration list for PBXProject "oportfolio" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -164,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B4D97A416B3FC9E009A466C /* oportfolio_iphone */,
+				2B4D97A416B3FC9E009A466C /* oportfolio */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +232,7 @@
 				2B4D97D916B40776009A466C /* OPLoginViewController.m in Sources */,
 				2B4D97DF16B409B0009A466C /* OPEntryViewController.m in Sources */,
 				2B4D97E216B40C1C009A466C /* OPNewEntryViewController.m in Sources */,
+				2B4D97E916B41009009A466C /* Entry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +267,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -244,6 +283,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -257,7 +297,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Edward Wallitt";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Edward Wallitt";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -265,6 +306,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "E4DC3759-45B7-4CC5-B44E-F1B654C6B269";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E4DC3759-45B7-4CC5-B44E-F1B654C6B269";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -274,9 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "oportfolio_iphone/oportfolio_iphone-Prefix.pch";
-				INFOPLIST_FILE = "oportfolio_iphone/oportfolio_iphone-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "oportfolio_iphone/oportfolio-Prefix.pch";
+				INFOPLIST_FILE = "oportfolio_iphone/oportfolio-Info.plist";
+				PRODUCT_NAME = oportfolio;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -285,9 +328,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "oportfolio_iphone/oportfolio_iphone-Prefix.pch";
-				INFOPLIST_FILE = "oportfolio_iphone/oportfolio_iphone-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "oportfolio_iphone/oportfolio-Prefix.pch";
+				INFOPLIST_FILE = "oportfolio_iphone/oportfolio-Info.plist";
+				PRODUCT_NAME = oportfolio;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -295,7 +338,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B4D979F16B3FC9E009A466C /* Build configuration list for PBXProject "oportfolio_iphone" */ = {
+		2B4D979F16B3FC9E009A466C /* Build configuration list for PBXProject "oportfolio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B4D97C716B3FC9E009A466C /* Debug */,
@@ -304,13 +347,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B4D97C916B3FC9E009A466C /* Build configuration list for PBXNativeTarget "oportfolio_iphone" */ = {
+		2B4D97C916B3FC9E009A466C /* Build configuration list for PBXNativeTarget "oportfolio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B4D97CA16B3FC9E009A466C /* Debug */,
 				2B4D97CB16B3FC9E009A466C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
