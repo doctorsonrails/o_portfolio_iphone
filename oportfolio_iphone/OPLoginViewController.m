@@ -57,6 +57,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:YES forKey:@"defaultUserSet"];
     
+    
+    
     // if stuff is entered into the form then transition to the entries view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
