@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 @interface OPEntriesViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *entries;
+@property (strong, nonatomic) Entry *entry;
 
 @end

@@ -28,13 +28,13 @@
 {
     [super viewDidLoad];
     
-    [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults boolForKey:@"defaultUserSet"])
+    {
+        // segue over to the login VC
+        [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning
