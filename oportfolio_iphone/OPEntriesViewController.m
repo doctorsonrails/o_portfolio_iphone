@@ -9,6 +9,7 @@
 #import "OPEntriesViewController.h"
 #import "OPEntryViewController.h"
 #import "AFJSONRequestOperation.h"
+#import "OPClientAuthentication.h"
 
 @interface OPEntriesViewController ()
 
@@ -34,18 +35,19 @@
     if (![defaults boolForKey:@"defaultUserSet"])
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
+    } else {
+        NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+        NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+        
+        [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
+        
+        [[SBAPIManager sharedManager] getPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+            self.entries = JSON;
+            [self.tableView reloadData];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"there was an error");
+        }];
     }
-    
-    NSURL *url = [[NSURL alloc] initWithString:@"https://o-portfolio-api.herokuapp.com/entries/"];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"Returned JSON is %@", JSON);
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"NSError: %@", error.localizedDescription);
-    }];
-    
-    [operation start];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [self.entries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,7 +75,9 @@
     static NSString *CellIdentifier = @"entry";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Entry %d", indexPath.row];
+    
+    
+    cell.textLabel.text = [self.entries objectAtIndex:indexPath.row][@"title"];
     cell.detailTextLabel.text = @"Tags will go here";
     return cell;
 }

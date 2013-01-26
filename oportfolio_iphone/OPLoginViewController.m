@@ -35,10 +35,10 @@
     alertDialog.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     
     UITextField* nameField = [alertDialog textFieldAtIndex:0];
-    [nameField setPlaceholder:@"Enter name"];
+    [nameField setPlaceholder:@"Username"];
     
     UITextField* passwordField = [alertDialog textFieldAtIndex:1];
-    [passwordField setPlaceholder:@"Enter number"];
+    [passwordField setPlaceholder:@"Password"];
     
     [alertDialog show];
 }
@@ -53,13 +53,17 @@
 
 - (void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    // make sure that we record that the user has logged in before
+    // make sure that we record that the user has logged in once before
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:YES forKey:@"defaultUserSet"];
     
+    // store the information
+    [defaults setObject:[alertView textFieldAtIndex:0].text forKey:@"username"];
+    [defaults setObject:[alertView textFieldAtIndex:1].text forKey:@"password"];
+    [defaults synchronize];
     
     
-    // if stuff is entered into the form then transition to the entries view controller
+    // go to entries VC
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

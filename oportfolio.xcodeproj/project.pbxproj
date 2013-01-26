@@ -31,6 +31,7 @@
 		2B616F4E16B42D780059A1D1 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4316B42D780059A1D1 /* AFURLConnectionOperation.m */; };
 		2B616F4F16B42D780059A1D1 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4516B42D780059A1D1 /* AFXMLRequestOperation.m */; };
 		2B616F5016B42D780059A1D1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4716B42D780059A1D1 /* UIImageView+AFNetworking.m */; };
+		2B616F5416B431BE0059A1D1 /* OPClientAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		2B616F4516B42D780059A1D1 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		2B616F4616B42D780059A1D1 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		2B616F4716B42D780059A1D1 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		2B616F5216B431BE0059A1D1 /* OPClientAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPClientAuthentication.h; sourceTree = "<group>"; };
+		2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPClientAuthentication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 		2B4D97AF16B3FC9E009A466C /* oportfolio_iphone */ = {
 			isa = PBXGroup;
 			children = (
+				2B616F5116B431300059A1D1 /* Networking */,
 				2B616F3416B42D780059A1D1 /* AFNetworking */,
 				2B4D97B816B3FC9E009A466C /* OPAppDelegate.h */,
 				2B4D97B916B3FC9E009A466C /* OPAppDelegate.m */,
@@ -214,6 +218,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		2B616F5116B431300059A1D1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2B616F5216B431BE0059A1D1 /* OPClientAuthentication.h */,
+				2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +310,7 @@
 				2B616F4E16B42D780059A1D1 /* AFURLConnectionOperation.m in Sources */,
 				2B616F4F16B42D780059A1D1 /* AFXMLRequestOperation.m in Sources */,
 				2B616F5016B42D780059A1D1 /* UIImageView+AFNetworking.m in Sources */,
+				2B616F5416B431BE0059A1D1 /* OPClientAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
