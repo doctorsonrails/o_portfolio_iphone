@@ -10,13 +10,10 @@
 
 @interface Entry : NSObject
 
-@property (nonatomic) int userId;
-@property (nonatomic) int entryId;
 @property (nonatomic, weak) NSString *title;
 @property (nonatomic, weak) NSString *description;
 @property (nonatomic, weak) NSString *reflection;
-@property (nonatomic, weak) NSDate *createdAt;
-@property (nonatomic, weak) NSDate *occuredAt;
+@property (nonatomic, weak) NSString *occuredAt;
 
 
 @end

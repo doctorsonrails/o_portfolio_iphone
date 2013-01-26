@@ -74,9 +74,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" id="aGN-0q-GjP">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="refresh" id="gy5-1Q-Zge">
+                            <connections>
+                                <action selector="refreshEntries:" destination="POe-xb-0LF" id="GiV-kQ-Rjb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="AmA-E5-qzt">
                             <connections>
-                                <segue destination="0CF-Qy-fjp" kind="push" id="IQa-Th-vcW"/>
+                                <segue destination="jHN-Xr-pvo" kind="modal" identifier="AddEntry" id="Rbr-ME-jhE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="1251" y="457"/>
         </scene>
-        <!--New Entry View Controller - New Entry-->
+        <!--New Entry View Controller - Add Entry-->
         <scene sceneID="yux-bR-GGq">
             <objects>
                 <tableViewController id="0CF-Qy-fjp" customClass="OPNewEntryViewController" sceneMemberID="viewController">
@@ -128,7 +133,7 @@
                         <sections>
                             <tableViewSection headerTitle="Title" id="ij2-no-xzy">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Gbb-Oy-JTG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Gbb-Oy-JTG">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -137,39 +142,39 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKx-KK-tHv">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="282" id="KcO-yZ-Dmq"/>
-                                                        <constraint firstAttribute="height" constant="30" id="hlH-60-Ho4"/>
+                                                        <constraint firstAttribute="width" constant="286" id="7kI-nd-pos"/>
+                                                        <constraint firstAttribute="height" constant="43" id="im1-Yi-brJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="HKx-KK-tHv" firstAttribute="centerX" secondItem="Gbb-Oy-JTG" secondAttribute="centerX" type="default" id="APo-bK-huY"/>
-                                            <constraint firstItem="HKx-KK-tHv" firstAttribute="centerY" secondItem="Gbb-Oy-JTG" secondAttribute="centerY" type="default" id="XwY-wa-fNL"/>
+                                            <constraint firstItem="HKx-KK-tHv" firstAttribute="centerX" secondItem="Gbb-Oy-JTG" secondAttribute="centerX" type="default" id="LQ0-z3-P5s"/>
+                                            <constraint firstItem="HKx-KK-tHv" firstAttribute="top" secondItem="Gbb-Oy-JTG" secondAttribute="top" constant="1" id="Pct-Uc-XJb"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="What did you do?" id="L2p-h8-hU3">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="134" id="GYd-cq-6h8">
-                                        <rect key="frame" x="0.0" y="138" width="320" height="136"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="83" id="GYd-cq-6h8">
+                                        <rect key="frame" x="0.0" y="138" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="133"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y89-UR-6fi">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="287" id="0eG-mq-oBP"/>
-                                                        <constraint firstAttribute="height" constant="122" id="gfl-pQ-7en"/>
+                                                        <constraint firstAttribute="height" constant="70" id="OHt-o3-UqI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -183,21 +188,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="What's your reflection?" id="xjo-d8-bEf">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="145" id="AIk-ej-AFp">
-                                        <rect key="frame" x="0.0" y="320" width="320" height="147"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="AIk-ej-AFp">
+                                        <rect key="frame" x="0.0" y="269" width="320" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="144"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmv-p8-RXv">
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="286" id="3QH-dG-GMX"/>
-                                                        <constraint firstAttribute="height" constant="133" id="p4w-ym-Um1"/>
+                                                        <constraint firstAttribute="height" constant="84" id="bjp-pn-fBW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -216,10 +221,15 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="New Entry" id="8td-ET-6hK">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="save" id="Mnv-w9-I1R">
+                    <navigationItem key="navigationItem" title="Add Entry" id="8td-ET-6hK">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="MZF-BY-vjd">
                             <connections>
-                                <action selector="saveEntry:" destination="0CF-Qy-fjp" id="QVo-5F-IwB"/>
+                                <action selector="didCancel:" destination="0CF-Qy-fjp" id="Sbk-Kt-ihh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Mnv-w9-I1R">
+                            <connections>
+                                <action selector="saveEntry:" destination="0CF-Qy-fjp" id="HfA-gj-lxg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -232,9 +242,54 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVu-Ly-ght" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-244"/>
+            <point key="canvasLocation" x="1779" y="-396"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qpd-17-wxW">
+            <objects>
+                <navigationController id="jHN-Xr-pvo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AD-cj-yKp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0CF-Qy-fjp" kind="relationship" relationship="rootViewController" id="98N-af-I1l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTO-8D-YSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="-396"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OPEntriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPEntriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshEntries:"/>
+            </relationships>
+        </class>
+        <class className="OPEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPEntryViewController.h"/>
+        </class>
+        <class className="OPLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPLoginViewController.h"/>
+        </class>
+        <class className="OPNewEntryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPNewEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didCancel:"/>
+                <relationship kind="action" name="saveEntry:"/>
+                <relationship kind="outlet" name="descriptionField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="reflectionField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

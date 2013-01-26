@@ -28,44 +28,53 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
-    [dateFormatter setDateFormat:@"yyyyMMdd'T'HH:mm:ss"];
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // show the keyboard when the view loads!
+    [self.titleField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveEntry:(id)sender {
-    
-    // SAVE TO THE CLOUD!
-    
-    // get the username and password TODO: check this exists and deal with that
+- (IBAction)saveEntry:(id)sender {    
+    // get the username and password TODO: need to check that this exists
     NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+
+    // create a Entry object
+    self.entry = [[Entry alloc] init];
+    self.entry.title = self.titleField.text;
+    self.entry.description = self.descriptionField.text;
+    self.entry.reflection = self.reflectionField.text;
+    self.entry.occuredAt = @"2013-01-27";
     
-    // create the occurred_at date
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
-    [dateFormatter setDateFormat:@"yyyyMMdd'T'HH:mm:ss"];
-//    NSString *occurred_at = [dateFormatter stringFromDate:[NSDate date]];
-    NSString *occurred_at = @"2013-01-25";
-    
-    // get the info from the form and store in a dictionary object
-    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[self.titleField.text, self.descriptionField.text, self.reflectionField.text, occurred_at] forKeys:@[@"title", @"description", @"reflection", @"occurred_at"]];
-    NSLog(@"%@", dictionary);
-    
+    // create a dictionary of values for pushing to the cloud
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[self.entry.title, self.entry.description, self.entry.reflection, self.entry.occuredAt] forKeys:@[@"title", @"description", @"reflection", @"occurred_at"]];
+    // do the push (in the background)
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
     [[SBAPIManager sharedManager] postPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:dictionary success:^(AFHTTPRequestOperation *operation, id JSON) {
-        NSLog(@"saved!");
+        NSLog(@"Saved to API OK");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);
     }];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate addItemViewController:self didFinishAddingItem:self.entry];
 }
+
+- (IBAction)didCancel:(id)sender {
+    [self.delegate addItemViewControllerDidCancel:self];
+}
+
+#pragma mark - TableView delegate
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 @end

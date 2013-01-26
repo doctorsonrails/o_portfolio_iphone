@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Entry.h"
+#import "OPNewEntryViewController.h"
 
-@interface OPEntriesViewController : UITableViewController
+@interface OPEntriesViewController : UITableViewController <AddItemViewControllerDelegate>
 
 @property (strong, nonatomic) Entry *entry;
 @property (strong, nonatomic) NSMutableArray *entries;
+
+- (IBAction)refreshEntries:(id)sender;
 
 @end

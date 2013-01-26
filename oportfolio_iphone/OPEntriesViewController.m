@@ -36,33 +36,37 @@
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     } else {
-        // get the user's info for the user defaults
-        NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-        NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
-        
-        // make requests using userName and password
-        [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
-        [[SBAPIManager sharedManager] getPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
-            self.entries = JSON;
-            for (NSDictionary* entryData in self.entries) {
-                Entry *entry = [[Entry alloc] init];
-                entry.title = entryData[@"title"];
-                entry.description = entryData[@"description"];
-                entry.reflection  = entryData[@"reflection"];
-                entry.occuredAt = [NSDate date];
-                NSLog(@"%@", entry);
-            }
-            [self.tableView setHidden:NO];
-            [self.tableView reloadData];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"there was an error");
-        }];
+        // TODO: should load the cached ones here and then get them in the background!!
+        [self getEntriesInBackground];
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (IBAction)refreshEntries:(id)sender {
+    [self getEntriesInBackground];
+}
+
+- (void) getEntriesInBackground
 {
-    [self.tableView reloadData];
+    // get the user's info for the user defaults
+    NSString *userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    
+    // make requests using userName and password
+    [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
+    [[SBAPIManager sharedManager] getPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        self.entries = JSON;
+        for (NSDictionary* entryData in self.entries) {
+            Entry *entry = [[Entry alloc] init];
+            entry.title = entryData[@"title"];
+            entry.description = entryData[@"description"];
+            entry.reflection  = entryData[@"reflection"];
+            // entry.occuredAt = [NSDate date]; TODO: make this is actual date and turn it into the right format!
+        }
+        [self.tableView setHidden:NO];
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"there was an error");
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,11 +75,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -107,7 +106,25 @@
         OPEntryViewController *entryViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         entryViewController.entry = [self.entries objectAtIndex:[indexPath row]];
+    } else if ([[segue identifier] isEqualToString:@"AddEntry"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        OPNewEntryViewController *controller = (OPNewEntryViewController *)navigationController.topViewController;
+        controller.delegate = self;
     }
 }
+
+#pragma mark - AddItemViewControllerDelegate
+
+- (void)addItemViewControllerDidCancel:(OPNewEntryViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addItemViewController:(OPNewEntryViewController *)controller didFinishAddingItem:(Entry *)item
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 @end

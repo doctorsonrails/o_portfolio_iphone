@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Edward Wallitt. All rights reserved.
 //
 
-
 #import "Entry.h"
 
 @implementation Entry
@@ -15,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        // init code here
+        self.occuredAt = @"2013-01-27";
     }
     
     return self;
