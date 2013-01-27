@@ -36,7 +36,6 @@
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     } else {
-        // TODO: should load the cached ones here and then get them in the background!!
         [self getEntriesInBackground];
     }
 }
@@ -60,8 +59,6 @@
             entry.title = entryData[@"title"];
             entry.description = entryData[@"description"];
             entry.reflection  = entryData[@"reflection"];
-            // entry.occuredAt = [NSDate date]; TODO: make this is actual date and turn it into the right format!
-            // TODO add this entry to the mutable array of entries
         }
         [self.tableView setHidden:NO];
         [self.tableView reloadData];
@@ -123,11 +120,8 @@
 
 - (void)addItemViewController:(OPNewEntryViewController *)controller didFinishAddingItem:(Entry *)item
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-//    int newRowIndex = [self.entries count];
-    
-    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];    
+    [self getEntriesInBackground];
 }
 
 

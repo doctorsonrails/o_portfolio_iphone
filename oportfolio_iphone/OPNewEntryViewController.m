@@ -60,11 +60,12 @@
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
     [[SBAPIManager sharedManager] postPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:dictionary success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSLog(@"Saved to API OK");
+        [self.delegate addItemViewController:self didFinishAddingItem:self.entry];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);
     }];
     
-    [self.delegate addItemViewController:self didFinishAddingItem:self.entry];
+
 }
 
 - (IBAction)didCancel:(id)sender {
