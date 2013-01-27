@@ -74,7 +74,7 @@
     HUD.delegate = self;
     HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeCustomView;
-    HUD.labelText = @"Searching your account";
+    HUD.labelText = @"Synced!";
     [HUD show:YES];
     [HUD hide:YES afterDelay:1];
 }
