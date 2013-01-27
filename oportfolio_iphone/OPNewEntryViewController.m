@@ -32,6 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:YES];
     // show the keyboard when the view loads!
     [self.titleField becomeFirstResponder];
 }
@@ -57,7 +58,7 @@
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[self.entry.title, self.entry.description, self.entry.reflection, self.entry.occuredAt] forKeys:@[@"title", @"description", @"reflection", @"occurred_at"]];
     // do the push (in the background)
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
-    [[SBAPIManager sharedManager] postPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:dictionary success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[SBAPIManager sharedManager] postPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:dictionary success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSLog(@"Saved to API OK");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);

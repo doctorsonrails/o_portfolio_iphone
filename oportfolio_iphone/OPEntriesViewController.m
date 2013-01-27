@@ -53,7 +53,7 @@
     
     // make requests using userName and password
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
-    [[SBAPIManager sharedManager] getPath:@"https://o-portfolio-api.herokuapp.com/entries/" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[SBAPIManager sharedManager] getPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         self.entries = JSON;
         for (NSDictionary* entryData in self.entries) {
             Entry *entry = [[Entry alloc] init];
@@ -61,6 +61,7 @@
             entry.description = entryData[@"description"];
             entry.reflection  = entryData[@"reflection"];
             // entry.occuredAt = [NSDate date]; TODO: make this is actual date and turn it into the right format!
+            // TODO add this entry to the mutable array of entries
         }
         [self.tableView setHidden:NO];
         [self.tableView reloadData];
@@ -123,6 +124,10 @@
 - (void)addItemViewController:(OPNewEntryViewController *)controller didFinishAddingItem:(Entry *)item
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    int newRowIndex = [self.entries count];
+    
+    [self.tableView reloadData];
 }
 
 

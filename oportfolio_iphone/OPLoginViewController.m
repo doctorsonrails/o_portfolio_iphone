@@ -7,6 +7,8 @@
 //
 
 #import "OPLoginViewController.h"
+#import "AFJSONRequestOperation.h"
+#import "OPClientAuthentication.h"
 
 @interface OPLoginViewController ()
 
@@ -26,44 +28,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    // when the app loads show the initial login form
     UIAlertView *alertDialog = [[UIAlertView alloc]
                                 initWithTitle:@"Login to oPortfolio"
                                 message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil];
+    
     alertDialog.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    
-    UITextField* nameField = [alertDialog textFieldAtIndex:0];
-    [nameField setPlaceholder:@"Username"];
-    
-    UITextField* passwordField = [alertDialog textFieldAtIndex:1];
-    [passwordField setPlaceholder:@"Password"];
-    
     [alertDialog show];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UIAlertViewDelegate
 
 - (void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    // make sure that we record that the user has logged in once before
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:YES forKey:@"defaultUserSet"];
+    // get the user's info for the user defaults
+    NSString *userName = [alertView textFieldAtIndex:0].text;
+    NSString *password = [alertView textFieldAtIndex:1].text;
     
-    // store the information
-    [defaults setObject:[alertView textFieldAtIndex:0].text forKey:@"username"];
-    [defaults setObject:[alertView textFieldAtIndex:1].text forKey:@"password"];
-    [defaults synchronize];
-    
-    // go to entries VC
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // make post using userName and password
+    [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
+    [[SBAPIManager sharedManager] getPath:@"http://o-portfolio-api-2.herokuapp.com/authenticate" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:userName forKey:@"username"];
+            [defaults setObject:password forKey:@"password"];
+            [defaults setBool:YES forKey:@"defaultUserSet"];
+            [defaults synchronize];
+
+            [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"There was an error: %@", error.localizedDescription);
+    }];
 }
 
 @end
