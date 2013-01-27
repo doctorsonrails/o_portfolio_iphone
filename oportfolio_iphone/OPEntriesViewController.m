@@ -36,33 +36,13 @@
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     } else {
-        // show a message to delay the app
-        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-        [self.navigationController.view addSubview:HUD];
-        HUD.delegate = self;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.labelText = @"Connected! Searching...";
-        
-        [HUD show:YES];
-        [HUD hide:YES afterDelay:2];
-        
+        [self showHUDSpinner];
         [self getEntriesInBackground];
     }
 }
 
 - (IBAction)refreshEntries:(id)sender {
-    // show a message to delay the app
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-    HUD.mode = MBProgressHUDModeCustomView;
-    HUD.labelText = @"Connected! Searching...";
-    
-    [HUD show:YES];
-    [HUD hide:YES afterDelay:2];
-    
+    [self showHUDSpinner];
     [self getEntriesInBackground];
 }
 
@@ -87,6 +67,18 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)showHUDSpinner
+{
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = @"Searching your account";
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:1];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -100,7 +92,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.textLabel.text = [self.entries objectAtIndex:indexPath.row][@"title"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Written on %@", [self.entries objectAtIndex:indexPath.row][@"occurred_at"]];
+    cell.detailTextLabel.text = @"Written at the NHS Hackday Oxford";
     return cell;
 }
 
