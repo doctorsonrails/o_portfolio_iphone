@@ -32,6 +32,7 @@
 		2B616F4F16B42D780059A1D1 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4516B42D780059A1D1 /* AFXMLRequestOperation.m */; };
 		2B616F5016B42D780059A1D1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4716B42D780059A1D1 /* UIImageView+AFNetworking.m */; };
 		2B616F5416B431BE0059A1D1 /* OPClientAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */; };
+		2BC58D1A16B4B61900375F91 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC58D1916B4B61900375F91 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		2B616F4716B42D780059A1D1 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		2B616F5216B431BE0059A1D1 /* OPClientAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPClientAuthentication.h; sourceTree = "<group>"; };
 		2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPClientAuthentication.m; sourceTree = "<group>"; };
+		2BC58D1916B4B61900375F91 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC58D1A16B4B61900375F91 /* MessageUI.framework in Frameworks */,
 				2B4D97AA16B3FC9E009A466C /* UIKit.framework in Frameworks */,
 				2B4D97AC16B3FC9E009A466C /* Foundation.framework in Frameworks */,
 				2B4D97AE16B3FC9E009A466C /* CoreGraphics.framework in Frameworks */,
@@ -99,6 +102,7 @@
 		2B4D979A16B3FC9E009A466C = {
 			isa = PBXGroup;
 			children = (
+				2BC58D1916B4B61900375F91 /* MessageUI.framework */,
 				2B4D97AF16B3FC9E009A466C /* oportfolio_iphone */,
 				2B4D97A816B3FC9E009A466C /* Frameworks */,
 				2B4D97A616B3FC9E009A466C /* Products */,

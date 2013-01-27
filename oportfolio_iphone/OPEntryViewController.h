@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "Entry.h"
 
-@interface OPEntryViewController : UIViewController
+@interface OPEntryViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSString *entryTitle;
 @property (strong, nonatomic) NSString *entryDescription;
@@ -18,4 +19,5 @@
 @property (strong, nonatomic) IBOutlet UITextView *descriptionArea;
 @property (strong, nonatomic) IBOutlet UITextView *reflectionArea;
 
+- (IBAction)exportEntry:(id)sender;
 @end
