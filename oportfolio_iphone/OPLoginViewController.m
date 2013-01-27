@@ -60,6 +60,12 @@
             [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);
+        UIAlertView *alertDialog = [[UIAlertView alloc]
+                                    initWithTitle:@"Please login again"
+                                    message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil];
+        
+        alertDialog.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        [alertDialog show];
     }];
 }
 

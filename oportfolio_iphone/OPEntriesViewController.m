@@ -92,7 +92,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.textLabel.text = [self.entries objectAtIndex:indexPath.row][@"title"];
-    cell.detailTextLabel.text = @"Written at the NHS Hackday Oxford";
+    cell.detailTextLabel.text = @"Created at the NHS Hackday, Oxford";
     return cell;
 }
 

@@ -39,6 +39,8 @@
 		2B63DB0D16B542810041762B /* oportfolio-300-reversed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B63DB0B16B542810041762B /* oportfolio-300-reversed@2x.png */; };
 		2B63DB0F16B5428D0041762B /* oportfolio-300-reversed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B63DB0E16B5428D0041762B /* oportfolio-300-reversed.png */; };
 		2B63DB1116B542910041762B /* oportfolio-300-reversed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B63DB1016B542910041762B /* oportfolio-300-reversed@2x.png */; };
+		2B63DB1316B55ED40041762B /* hackday_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B63DB1216B55ED40041762B /* hackday_logo.png */; };
+		2B63DB1616B564D50041762B /* OPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B63DB1516B564D50041762B /* OPSettingsViewController.m */; };
 		2BC58D1A16B4B61900375F91 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC58D1916B4B61900375F91 /* MessageUI.framework */; };
 		2BC58D1E16B4BA1F00375F91 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D1C16B4BA1F00375F91 /* 19-gear.png */; };
 		2BC58D1F16B4BA1F00375F91 /* 19-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D1D16B4BA1F00375F91 /* 19-gear@2x.png */; };
@@ -101,6 +103,9 @@
 		2B63DB0B16B542810041762B /* oportfolio-300-reversed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oportfolio-300-reversed@2x.png"; sourceTree = "<group>"; };
 		2B63DB0E16B5428D0041762B /* oportfolio-300-reversed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oportfolio-300-reversed.png"; sourceTree = "<group>"; };
 		2B63DB1016B542910041762B /* oportfolio-300-reversed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oportfolio-300-reversed@2x.png"; sourceTree = "<group>"; };
+		2B63DB1216B55ED40041762B /* hackday_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hackday_logo.png; sourceTree = "<group>"; };
+		2B63DB1416B564D50041762B /* OPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSettingsViewController.h; sourceTree = "<group>"; };
+		2B63DB1516B564D50041762B /* OPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPSettingsViewController.m; sourceTree = "<group>"; };
 		2BC58D1916B4B61900375F91 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2BC58D1C16B4BA1F00375F91 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		2BC58D1D16B4BA1F00375F91 /* 19-gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear@2x.png"; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 		2B4D97B016B3FC9E009A466C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B63DB1216B55ED40041762B /* hackday_logo.png */,
 				2B63DB0A16B542810041762B /* oportfolio-300-reversed.png */,
 				2B63DB0B16B542810041762B /* oportfolio-300-reversed@2x.png */,
 				2B63DAFE16B53B680041762B /* 37x-Checkmark.png */,
@@ -220,6 +226,8 @@
 				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
 				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
 				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
+				2B63DB1416B564D50041762B /* OPSettingsViewController.h */,
+				2B63DB1516B564D50041762B /* OPSettingsViewController.m */,
 			);
 			name = Entries;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 				2B63DB0D16B542810041762B /* oportfolio-300-reversed@2x.png in Resources */,
 				2B63DB0F16B5428D0041762B /* oportfolio-300-reversed.png in Resources */,
 				2B63DB1116B542910041762B /* oportfolio-300-reversed@2x.png in Resources */,
+				2B63DB1316B55ED40041762B /* hackday_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +382,7 @@
 				2B616F5016B42D780059A1D1 /* UIImageView+AFNetworking.m in Sources */,
 				2B616F5416B431BE0059A1D1 /* OPClientAuthentication.m in Sources */,
 				2B63DAFD16B53AA50041762B /* MBProgressHUD.m in Sources */,
+				2B63DB1616B564D50041762B /* OPSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
