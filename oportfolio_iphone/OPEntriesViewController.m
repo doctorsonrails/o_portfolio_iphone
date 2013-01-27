@@ -36,11 +36,33 @@
     {
         [self performSegueWithIdentifier:@"showLoginVC" sender:nil];
     } else {
+        // show a message to delay the app
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.labelText = @"Connected! Searching...";
+        
+        [HUD show:YES];
+        [HUD hide:YES afterDelay:2];
+        
         [self getEntriesInBackground];
     }
 }
 
 - (IBAction)refreshEntries:(id)sender {
+    // show a message to delay the app
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = @"Connected! Searching...";
+    
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:2];
+    
     [self getEntriesInBackground];
 }
 
@@ -58,17 +80,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"there was an error");
     }];
-    
-    // show a message to delay the app
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-    HUD.mode = MBProgressHUDModeCustomView;
-    HUD.labelText = @"Connected! Searching...";
-    
-    [HUD show:YES];
-    [HUD hide:YES afterDelay:2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +139,17 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];    
     [self getEntriesInBackground];
+    
+    // show a message to delay the app
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = @"Saved entry!";
+    
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:1];
 }
 
 
