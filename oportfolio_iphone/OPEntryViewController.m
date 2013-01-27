@@ -47,8 +47,7 @@
         
         NSString *emailBody = [[NSString alloc] initWithFormat:@"<p><b>Title</b></p><p>%@</p><p><b>Description</b></p><p>%@</p><p><b>Reflection</b></p><p>%@</p>", self.entryTitle, self.entryDescription, self.entryReflection];
         [mailer setMessageBody:emailBody isHTML:YES];
-        
-        [self presentModalViewController:mailer animated:YES];
+        [self presentViewController:mailer animated:YES completion:nil];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"Your device cannot send mail" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -57,6 +56,6 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

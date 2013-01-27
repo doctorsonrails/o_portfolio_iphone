@@ -33,6 +33,10 @@
 		2B616F5016B42D780059A1D1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F4716B42D780059A1D1 /* UIImageView+AFNetworking.m */; };
 		2B616F5416B431BE0059A1D1 /* OPClientAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */; };
 		2BC58D1A16B4B61900375F91 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC58D1916B4B61900375F91 /* MessageUI.framework */; };
+		2BC58D1E16B4BA1F00375F91 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D1C16B4BA1F00375F91 /* 19-gear.png */; };
+		2BC58D1F16B4BA1F00375F91 /* 19-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D1D16B4BA1F00375F91 /* 19-gear@2x.png */; };
+		2BC58D2216B4BAC900375F91 /* 187-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D2016B4BAC900375F91 /* 187-pencil.png */; };
+		2BC58D2316B4BAC900375F91 /* 187-pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BC58D2116B4BAC900375F91 /* 187-pencil@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		2B616F5216B431BE0059A1D1 /* OPClientAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPClientAuthentication.h; sourceTree = "<group>"; };
 		2B616F5316B431BE0059A1D1 /* OPClientAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPClientAuthentication.m; sourceTree = "<group>"; };
 		2BC58D1916B4B61900375F91 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2BC58D1C16B4BA1F00375F91 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
+		2BC58D1D16B4BA1F00375F91 /* 19-gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear@2x.png"; sourceTree = "<group>"; };
+		2BC58D2016B4BAC900375F91 /* 187-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "187-pencil.png"; sourceTree = "<group>"; };
+		2BC58D2116B4BAC900375F91 /* 187-pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "187-pencil@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,13 +138,13 @@
 		2B4D97AF16B3FC9E009A466C /* oportfolio_iphone */ = {
 			isa = PBXGroup;
 			children = (
-				2B616F5116B431300059A1D1 /* Networking */,
-				2B616F3416B42D780059A1D1 /* AFNetworking */,
+				2B4D97C116B3FC9E009A466C /* MainStoryboard.storyboard */,
 				2B4D97B816B3FC9E009A466C /* OPAppDelegate.h */,
 				2B4D97B916B3FC9E009A466C /* OPAppDelegate.m */,
 				2B4D97E416B40FC3009A466C /* Models */,
 				2B4D97E316B40FBC009A466C /* Controllers */,
-				2B4D97C116B3FC9E009A466C /* MainStoryboard.storyboard */,
+				2B616F5116B431300059A1D1 /* Networking */,
+				2B616F3416B42D780059A1D1 /* AFNetworking */,
 				2B4D97B016B3FC9E009A466C /* Supporting Files */,
 			);
 			path = oportfolio_iphone;
@@ -145,6 +153,10 @@
 		2B4D97B016B3FC9E009A466C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2BC58D2016B4BAC900375F91 /* 187-pencil.png */,
+				2BC58D2116B4BAC900375F91 /* 187-pencil@2x.png */,
+				2BC58D1C16B4BA1F00375F91 /* 19-gear.png */,
+				2BC58D1D16B4BA1F00375F91 /* 19-gear@2x.png */,
 				2B4D97B116B3FC9E009A466C /* oportfolio-Info.plist */,
 				2B4D97B216B3FC9E009A466C /* InfoPlist.strings */,
 				2B4D97B516B3FC9E009A466C /* main.m */,
@@ -161,12 +173,6 @@
 			children = (
 				2B4D97E616B40FE4009A466C /* Authentication */,
 				2B4D97E516B40FDB009A466C /* Entries */,
-				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
-				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
-				2B4D97DD16B409B0009A466C /* OPEntryViewController.h */,
-				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
-				2B4D97D416B40753009A466C /* OPEntriesViewController.h */,
-				2B4D97D516B40753009A466C /* OPEntriesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +189,12 @@
 		2B4D97E516B40FDB009A466C /* Entries */ = {
 			isa = PBXGroup;
 			children = (
+				2B4D97D516B40753009A466C /* OPEntriesViewController.m */,
+				2B4D97D416B40753009A466C /* OPEntriesViewController.h */,
+				2B4D97DE16B409B0009A466C /* OPEntryViewController.m */,
+				2B4D97DD16B409B0009A466C /* OPEntryViewController.h */,
+				2B4D97E116B40C1C009A466C /* OPNewEntryViewController.m */,
+				2B4D97E016B40C1C009A466C /* OPNewEntryViewController.h */,
 			);
 			name = Entries;
 			sourceTree = "<group>";
@@ -288,6 +300,10 @@
 				2B4D97BE16B3FC9E009A466C /* Default@2x.png in Resources */,
 				2B4D97C016B3FC9E009A466C /* Default-568h@2x.png in Resources */,
 				2B4D97C316B3FC9E009A466C /* MainStoryboard.storyboard in Resources */,
+				2BC58D1E16B4BA1F00375F91 /* 19-gear.png in Resources */,
+				2BC58D1F16B4BA1F00375F91 /* 19-gear@2x.png in Resources */,
+				2BC58D2216B4BAC900375F91 /* 187-pencil.png in Resources */,
+				2BC58D2316B4BAC900375F91 /* 187-pencil@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
