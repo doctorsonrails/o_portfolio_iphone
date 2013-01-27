@@ -57,11 +57,11 @@
             [defaults setObject:password forKey:@"password"];
             [defaults setBool:YES forKey:@"defaultUserSet"];
             [defaults synchronize];
-
             [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);
     }];
 }
+
 
 @end

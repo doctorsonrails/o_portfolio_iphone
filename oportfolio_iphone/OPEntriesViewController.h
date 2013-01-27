@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Entry.h"
 #import "OPNewEntryViewController.h"
+#import "MBProgressHUD.h"
 
-@interface OPEntriesViewController : UITableViewController <AddItemViewControllerDelegate>
+@interface OPEntriesViewController : UITableViewController <AddItemViewControllerDelegate, MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 
 //@property (strong, nonatomic) Entry *entry;
 @property (strong, nonatomic) NSMutableArray *entries;

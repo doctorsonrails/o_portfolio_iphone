@@ -56,9 +56,11 @@
     
     // create a dictionary of values for pushing to the cloud
     NSDictionary *dictionary = [[NSDictionary alloc] initWithObjects:@[self.entry.title, self.entry.description, self.entry.reflection, self.entry.occuredAt] forKeys:@[@"title", @"description", @"reflection", @"occurred_at"]];
+    NSLog(@"%@", dictionary);
     // do the push (in the background)
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
     [[SBAPIManager sharedManager] postPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:dictionary success:^(AFHTTPRequestOperation *operation, id JSON) {
+        NSLog(@"%@", JSON);
         NSLog(@"Saved to API OK");
         [self.delegate addItemViewController:self didFinishAddingItem:self.entry];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

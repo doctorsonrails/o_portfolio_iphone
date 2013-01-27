@@ -54,11 +54,21 @@
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
     [[SBAPIManager sharedManager] getPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         self.entries = JSON;
-        NSLog(@"%@", self.entries);
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"there was an error");
     }];
+    
+    // show a message to delay the app
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+    HUD.mode = MBProgressHUDModeCustomView;
+    HUD.labelText = @"Connected! Searching...";
+    
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:2];
 }
 
 - (void)didReceiveMemoryWarning
