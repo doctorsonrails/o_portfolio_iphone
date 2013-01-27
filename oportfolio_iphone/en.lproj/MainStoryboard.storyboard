@@ -102,21 +102,62 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entry info will go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00V-em-p6J">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00V-em-p6J">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="XkG-p3-q9K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reflection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBK-5I-1vb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nO6-QT-LqH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0r-sT-Cli">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="Nr5-7c-in2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i00-Wv-NSB">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="Zh2-76-NVD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="00V-em-p6J" firstAttribute="top" secondItem="xX8-RI-T5H" secondAttribute="top" constant="65" id="HtO-nG-wpv"/>
-                            <constraint firstItem="00V-em-p6J" firstAttribute="centerX" secondItem="xX8-RI-T5H" secondAttribute="centerX" type="default" id="bEN-bY-O9c"/>
+                            <constraint firstItem="00V-em-p6J" firstAttribute="leading" secondItem="xX8-RI-T5H" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2sm-VI-19T"/>
+                            <constraint firstItem="i00-Wv-NSB" firstAttribute="leading" secondItem="xX8-RI-T5H" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4qe-aR-Iit"/>
+                            <constraint firstItem="00V-em-p6J" firstAttribute="top" secondItem="xX8-RI-T5H" secondAttribute="top" constant="26" id="9ag-td-7kA"/>
+                            <constraint firstAttribute="trailing" secondItem="00V-em-p6J" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FaX-Cd-HxR"/>
+                            <constraint firstItem="mBK-5I-1vb" firstAttribute="leading" secondItem="xX8-RI-T5H" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IwE-6U-O8M"/>
+                            <constraint firstAttribute="trailing" secondItem="U0r-sT-Cli" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="S71-6f-fKl"/>
+                            <constraint firstItem="mBK-5I-1vb" firstAttribute="top" secondItem="U0r-sT-Cli" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ggs-CI-UiM"/>
+                            <constraint firstAttribute="trailing" secondItem="i00-Wv-NSB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hzD-tQ-S6J"/>
+                            <constraint firstItem="i00-Wv-NSB" firstAttribute="top" secondItem="mBK-5I-1vb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jxo-yh-Nmp"/>
+                            <constraint firstItem="U0r-sT-Cli" firstAttribute="top" secondItem="xX8-RI-T5H" secondAttribute="top" constant="63" id="k0S-Uf-ykH"/>
+                            <constraint firstItem="U0r-sT-Cli" firstAttribute="leading" secondItem="xX8-RI-T5H" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mdr-Oj-n8Q"/>
+                            <constraint firstAttribute="trailing" secondItem="mBK-5I-1vb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ncT-L1-YaE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Entry" id="BCu-eP-dQH">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="8Gz-2u-U0F"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionArea" destination="U0r-sT-Cli" id="GdN-cT-im5"/>
+                        <outlet property="reflectionArea" destination="i00-Wv-NSB" id="F5l-zy-m0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C77-vi-Ztn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,33 +304,6 @@
             <point key="canvasLocation" x="1251" y="-396"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OPEntriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPEntriesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshEntries:"/>
-            </relationships>
-        </class>
-        <class className="OPEntryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPEntryViewController.h"/>
-        </class>
-        <class className="OPLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPLoginViewController.h"/>
-        </class>
-        <class className="OPNewEntryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OPNewEntryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didCancel:"/>
-                <relationship kind="action" name="saveEntry:"/>
-                <relationship kind="outlet" name="descriptionField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="reflectionField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

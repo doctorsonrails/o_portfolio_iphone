@@ -54,13 +54,7 @@
     [[SBAPIManager sharedManager] setUsername:userName andPassword:password];
     [[SBAPIManager sharedManager] getPath:@"http://o-portfolio-api-2.herokuapp.com/entries" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         self.entries = JSON;
-        for (NSDictionary* entryData in self.entries) {
-            Entry *entry = [[Entry alloc] init];
-            entry.title = entryData[@"title"];
-            entry.description = entryData[@"description"];
-            entry.reflection  = entryData[@"reflection"];
-        }
-        [self.tableView setHidden:NO];
+        NSLog(@"%@", self.entries);
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"there was an error");
@@ -103,7 +97,9 @@
     if ([[segue identifier] isEqualToString:@"goToIndividualEntry"]) {
         OPEntryViewController *entryViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        entryViewController.entry = [self.entries objectAtIndex:[indexPath row]];
+        entryViewController.entryTitle = [self.entries objectAtIndex:indexPath.row][@"title"];
+        entryViewController.entryDescription = [self.entries objectAtIndex:indexPath.row][@"description"];
+        entryViewController.entryReflection = [self.entries objectAtIndex:indexPath.row][@"reflection"];
     } else if ([[segue identifier] isEqualToString:@"AddEntry"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         OPNewEntryViewController *controller = (OPNewEntryViewController *)navigationController.topViewController;

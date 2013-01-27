@@ -64,8 +64,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"There was an error: %@", error.localizedDescription);
     }];
-    
-
 }
 
 - (IBAction)didCancel:(id)sender {

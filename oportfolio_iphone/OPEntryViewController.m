@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.descriptionArea.text = self.entryDescription;
+    self.reflectionArea.text = self.entryReflection;
+    self.navigationItem.title = self.entryTitle;
 }
 
 - (void)didReceiveMemoryWarning

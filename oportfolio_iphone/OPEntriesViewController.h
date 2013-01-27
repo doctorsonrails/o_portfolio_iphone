@@ -12,7 +12,7 @@
 
 @interface OPEntriesViewController : UITableViewController <AddItemViewControllerDelegate>
 
-@property (strong, nonatomic) Entry *entry;
+//@property (strong, nonatomic) Entry *entry;
 @property (strong, nonatomic) NSMutableArray *entries;
 
 - (IBAction)refreshEntries:(id)sender;

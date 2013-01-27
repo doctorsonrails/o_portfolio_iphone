@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 @interface OPEntryViewController : UIViewController
 
-@property (strong, nonatomic) NSString *entry;
+@property (strong, nonatomic) NSString *entryTitle;
+@property (strong, nonatomic) NSString *entryDescription;
+@property (strong, nonatomic) NSString *entryReflection;
+
+@property (strong, nonatomic) IBOutlet UITextView *descriptionArea;
+@property (strong, nonatomic) IBOutlet UITextView *reflectionArea;
 
 @end
